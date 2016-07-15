@@ -1,0 +1,18 @@
+#!/bin/sh
+
+ORIG_DIR="$PWD"
+FILE="/var/cache/apt/pkgcache.bin"
+CHECK=$( echo $(( (`date +%s` - `stat -L --format %Y $FILE`) > (24*60*60) )) )
+DIFF=$(( ( (24*60*60) - (`date +%s` - `stat -L --format %Y $FILE`) ) / 60 / 60)) 
+
+if [ $CHECK -eq 1 ]; then
+	echo "*** OS will be updated now ***"
+	cd ~/config_management
+	make update-os
+else
+	echo "*** OS will be updated in $DIFF hours ***"	
+fi
+
+cd $ORIG_DIR
+
+
