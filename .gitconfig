@@ -1,0 +1,34 @@
+[user]
+    name = Benjamin Boortz
+    email = benjamin.boortz@secure.mailbox.org
+[core]
+    editor = vim
+    excludesfile = ~/.gitexcludes
+[color]
+    ui = true
+[push]
+    default = simple
+[diff]
+    tool = vimdiff
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+[mergetool]
+    keepbackup = false
+[include]
+    path = ~/.gitconfig_local
+[alias]
+    s = status -sb
+    b = branch
+    c = commit -v
+    a = add
+    co = checkout
+    l = pull
+    p = push
+    f = fetch
+    mt = mergetool
+    m = merge
+    r = remote
+    re = rebase
+    lg = log --stat
+    d = diff
