@@ -27,6 +27,7 @@ esac
 
 # PROMPT
 prompt_command() {
+	PS1_RET=$(if [[ $? == 0 ]]; then echo "✓"; else echo "✗"; fi)
 	PS1_GIT=""
 	# get branch info
 	GIT_BRANCH=$(git symbolic-ref HEAD 2>/dev/null)
@@ -46,7 +47,7 @@ prompt_command() {
 		fi
 	fi
 PS1="
-> \d \t - tty:\l - \#-\!-\j
+> \d \t - tty:\l - \#-\!-\j - ${PS1_RET}
 > ${color_user}\u@${color_yellow}\h:${color_white}\w ${PS1_GIT}
 ${color_user}${prompt_char}${color_off} "
 }
@@ -55,6 +56,7 @@ PROMPT_COMMAND="prompt_command"
 
 # loading other files'
 . ~/.shellrc.aliases
+. ~/.shellrc.functions
 
 
 
