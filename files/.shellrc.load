@@ -8,6 +8,10 @@ export PATH=$PATH:$HOME/bin
 ####
 # put any shell customizations in here
 
+# settings
+HISTSIZE=1000¬
+HISTFILESIZE=2000
+
 # colors
 color_black="\[$(/usr/bin/tput setaf 0)\]"
 color_red="\[$(/usr/bin/tput setaf 1)\]"
@@ -57,6 +61,13 @@ PROMPT_COMMAND="prompt_command"
 # loading other files'
 . ~/.shellrc.aliases
 . ~/.shellrc.functions
+
+
+# loading regarding hostnames
+HOSTFILE="~/.shellrc.host.${HOSTNAME}"
+if [ -f "${HOSTFILE}" ]; then
+	. "${HOSTFILE}"
+fi
 
 
 
