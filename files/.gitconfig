@@ -30,5 +30,6 @@
     m = merge
     r = remote
     re = rebase
-    lg = log --stat
+	l = log --graph --full-history --all --color 
+	lg = log --stat
     d = diff
