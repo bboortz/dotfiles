@@ -9,4 +9,4 @@ export PATH=$PATH:$HOME/bin
 # put any bash/zsh customizations in here
 
 
-./bin/update_os
+~/bin/update_os
