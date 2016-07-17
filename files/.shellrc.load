@@ -59,14 +59,14 @@ PROMPT_COMMAND="prompt_command"
 
 
 # loading other files'
-. ~/.shellrc.aliases
-. ~/.shellrc.functions
+source ~/.shellrc.aliases
+source ~/.shellrc.functions
 
 
 # loading regarding hostnames
 HOSTFILE="~/.shellrc.host.${HOSTNAME}"
 if [ -f "${HOSTFILE}" ]; then
-	. "${HOSTFILE}"
+	source "${HOSTFILE}"
 fi
 
 
