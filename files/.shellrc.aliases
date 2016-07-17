@@ -14,3 +14,7 @@ alias .='pwd'
 alias ..='cd ..'
 alias ...='cd ../..'
 
+# private config management aliases
+alias pcm_mount='gocryptfs ~/encrypted/config_management.cipher ~/encrypted/config_management.plain'
+alias pcm_umount='sudo umount ~/encrypted/config_management.plain'
+
