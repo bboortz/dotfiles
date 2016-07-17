@@ -1,66 +1,22 @@
 # include what you want
-
-export PATH=$PATH:$HOME/bin
-
 # add this to the .bashrc or .zshrc (done automatically by dfm):
 # . $HOME/.shellrc.load
 
 ####
 # put any shell customizations in here
 
+# paths
+export PATH=$PATH:$HOME/bin
+
+
 # settings
 HISTSIZE=1000¬
 HISTFILESIZE=2000
 
-# colors
-color_black="\[$(/usr/bin/tput setaf 0)\]"
-color_red="\[$(/usr/bin/tput setaf 1)\]"
-color_green="\[$(/usr/bin/tput setaf 2)\]"
-color_yellow="\[$(/usr/bin/tput setaf 3)\]"
-color_blue="\[$(/usr/bin/tput setaf 6)\]"
-color_white="\[$(/usr/bin/tput setaf 7)\]"
-color_gray="\[$(/usr/bin/tput setaf 8)\]"
-color_off="\[$(/usr/bin/tput sgr0)\]"
-prompt_char="\$"
-
-# set user color
-case `id -u` in
-	0) color_user=$color_red; prompt_char="#" ;;
-	*) color_user=$color_green ;;
-esac
-
-# PROMPT
-prompt_command() {
-	PS1_RET=$(if [[ $? == 0 ]]; then echo "✓"; else echo "✗"; fi)
-	PS1_GIT=""
-	# get branch info
-	GIT_BRANCH=$(git symbolic-ref HEAD 2>/dev/null)
-	if [[ ! -z $GIT_BRANCH ]]; then
-		GIT_BRANCH=${GIT_BRANCH#refs/heads/}
-
-		# get git status
-		local GIT_STATUS=$(git status --porcelain 2>/dev/null)
-		[[ -n $GIT_STATUS ]] && GIT_DIRTY=1
-	fi
-	# build git status for prompt
-	if [[ ! -z $GIT_BRANCH ]]; then
-		if [[ -z $GIT_DIRTY ]]; then
-			PS1_GIT="(git: ${color_green}${GIT_BRANCH}${color_off})"
-		else
-			PS1_GIT="(git: ${color_red}${GIT_BRANCH}${color_off})"
-		fi
-	fi
-PS1="
-> \d \t - tty:\l - \#-\!-\j - ${PS1_RET}
-> ${color_user}\u@${color_yellow}\h:${color_white}\w ${PS1_GIT}
-${color_user}${prompt_char}${color_off} "
-}
-PROMPT_COMMAND="prompt_command"
-
-
 # loading other files'
 source ~/.shellrc.aliases
 source ~/.shellrc.functions
+source ~/.shellrc.prompt
 
 
 # loading regarding hostnames
