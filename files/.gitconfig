@@ -24,7 +24,7 @@
     ca = commit -a -v
     a = add
     co = checkout
-    P = pull
+    l = pull
     p = push
     f = fetch
     mt = mergetool
