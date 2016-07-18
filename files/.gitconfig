@@ -21,6 +21,7 @@
     s = status -sb
     b = branch
     c = commit -v
+    ca = commit -a -v
     a = add
     co = checkout
     l = pull
