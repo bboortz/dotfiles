@@ -16,7 +16,10 @@
 [mergetool]
     keepbackup = false
 [include]
-    path = ~/.gitconfig_local
+	path = ~/.gitconfig_local
+[http]
+	lowSpeedLimit = 1000
+	lowSpeedTime = 20
 [alias]
     s = status -sb
     b = branch
