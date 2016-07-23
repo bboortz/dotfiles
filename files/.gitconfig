@@ -14,12 +14,14 @@
     tool = vimdiff
     conflictstyle = diff3
 [mergetool]
-    keepbackup = false
-[include]
-	path = ~/.gitconfig_local
+	keepbackup = false
+[credential "https://github.com"]
+	username = bboortz
 [http]
 	lowSpeedLimit = 1000
 	lowSpeedTime = 20
+[include]
+	path = ~/.gitconfig_local
 [alias]
     s = status -sb
     b = branch
