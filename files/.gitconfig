@@ -21,7 +21,8 @@
     s = status -sb
     b = branch
     c = commit -v
-    ca = commit -a -v
+	ca = commit -a -v
+	d = diff
     a = add
     co = checkout
 	p = push
@@ -30,7 +31,8 @@
     f = fetch
     mt = mergetool
     m = merge
-    r = remote
+	r = remote
+	ru = remote -v update
     re = rebase
 	l = log --graph --full-history --all --color 
 	lg = log --stat
