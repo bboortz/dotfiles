@@ -27,14 +27,14 @@ set hlsearch           " always highlight all matches of previous search pattern
 set gdefault           " turn on the ':substitute' flag 'g' by default
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
 set encoding=utf-8     " sets the character encoding used inside Vim
-set fileencodings=utf8,cp1251  " list of character encodings considered
+set fileencodings=utf8  " list of character encodings considered
                                " when starting to edit an existing file
 set fillchars=vert:\ ,fold:-  " characters for fill statuslines and vertical separators
 set listchars=tab:⇥\ ,trail:·,extends:⋯,precedes:⋯,eol:¬  " invisible symbols representation
 set list               " display unprintable characters by default
 set wildignore+=.git,*.o,*.pyc,.DS_Store  " list of ignored in expanding wildcards files
 set nobackup           " do not create backup files
-set noswapfile         " do not create swap files
+" set noswapfile         " do not create swap files
 
 " rolodex Vim
 set noequalalways      " makes sure Vim doesn't try to make all windows equal
