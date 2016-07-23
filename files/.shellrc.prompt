@@ -18,6 +18,11 @@ esac
 
 # PROMPT
 prompt_command() {
+	local PS1_RET
+	local PS1_GIT
+	local GIT_BRANCH
+	local GIT_STATUS
+	local GIT_DIRTY
 	PS1_RET=$(if [[ $? == 0 ]]; then echo "✓"; else echo "✗"; fi)
 	PS1_GIT=""
 	# get branch info
