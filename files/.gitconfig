@@ -27,6 +27,7 @@
     b = branch
     c = commit -v
 	ca = commit -a -v
+	camend = commit --amend --no-edit -v
 	d = diff
     a = add
     co = checkout
