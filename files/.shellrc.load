@@ -20,7 +20,7 @@ source ~/.shellrc.prompt
 
 
 # loading regarding hostnames
-HOSTFILE="~/.shellrc.host.${HOSTNAME}"
+HOSTFILE="$( readlink -f ~/.shellrc.host.${HOSTNAME} )"
 if [ -f "${HOSTFILE}" ]; then
 	source "${HOSTFILE}"
 fi
