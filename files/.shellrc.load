@@ -17,6 +17,8 @@ HISTFILESIZE=2000
 source ~/.shellrc.aliases
 source ~/.shellrc.functions
 source ~/.shellrc.prompt
+source ~/.shellrc.ssh
+source ~/.shellrc.golang
 
 
 # loading regarding hostnames

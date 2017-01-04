@@ -3,4 +3,6 @@ export GOPATH=~/projects/go-path
 export PATH="$GOPATH/bin:$PATH"
 
 # aliases
-alias go_godepinstall='cd $GOPATH; go get github.com/tools/godep'
+alias go_cd='cd $GOPATH'
+alias go_init='mkdir -p $GOPATH; cd $GOPATH; go get github.com/tools/godep'
+alias go_update='cd $GOPATH; find src -maxdepth 3 -mindepth 3 -type d | while read f; do pkg=${f#*/}; echo "updating $pkg ..."; go get -u $pkg; done'
