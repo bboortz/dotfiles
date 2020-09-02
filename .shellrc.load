@@ -20,6 +20,7 @@ source ~/.shellrc.functions
 source ~/.shellrc.prompt
 source ~/.shellrc.ssh
 source ~/.shellrc.golang
+source ~/.shellrc.rust
 
 
 # loading regarding hostnames
@@ -32,4 +33,4 @@ fi
 
 ####
 # update os
-~/bin/update_os
+# ~/bin/update_os
