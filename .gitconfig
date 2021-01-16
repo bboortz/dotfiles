@@ -20,6 +20,7 @@
 [http]
 	lowSpeedLimit = 1000
 	lowSpeedTime = 20
+	postBuffer = 524288000
 [include]
 	path = ~/.gitconfig_local
 [alias]
@@ -45,3 +46,5 @@
     d = diff
 [credential]
 	helper = cache --timeout=3600
+[pull]
+	rebase = false
