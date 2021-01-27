@@ -100,4 +100,4 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 if [ -d "$XDG_CONFIG_HOME" ]; then
 	mkdir -p $ZDOTDIR
 fi
-export HISTFILE=${XDG_DATA_HOME}/.zsh/.zsh_history
+export HISTFILE=${XDG_DATA_HOME}/zsh/.zsh_history
