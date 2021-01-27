@@ -93,4 +93,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source ~/.shellrc.load
+source ~/.config/shellrc/.shellrc.load
+
+# set the zsh dotdir / .dir
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+mkdir -p $ZDOTDIR

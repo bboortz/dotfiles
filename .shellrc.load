@@ -21,6 +21,7 @@ source ~/.shellrc.prompt
 source ~/.shellrc.ssh
 source ~/.shellrc.golang
 source ~/.shellrc.rust
+source ~/.shellrc.xdg
 
 
 # loading regarding hostnames
