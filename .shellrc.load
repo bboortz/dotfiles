@@ -5,6 +5,7 @@
 ####
 # put any shell customizations in here
 
+
 # paths
 export PATH=$PATH:$HOME/bin
 
@@ -13,15 +14,14 @@ export PATH=$PATH:$HOME/bin
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-# loading other files'
-source ~/.shellrc.env
-source ~/.shellrc.aliases
-source ~/.shellrc.functions
-source ~/.shellrc.prompt
-source ~/.shellrc.ssh
-source ~/.shellrc.golang
-source ~/.shellrc.rust
-source ~/.shellrc.xdg
+
+# loading shellrc files'
+for f in ~/.config/shellrc/.shellrc.*; do 
+	if [ "${f##*/}" = ".shellrc.load" ]; then
+		continue
+	fi
+	source $f
+done
 
 
 # loading regarding hostnames
@@ -29,9 +29,3 @@ HOSTFILE="$( readlink -f ~/.shellrc.host.${HOSTNAME} )"
 if [ -f "${HOSTFILE}" ]; then
 	source "${HOSTFILE}"
 fi
-
-
-
-####
-# update os
-# ~/bin/update_os

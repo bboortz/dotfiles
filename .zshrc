@@ -97,4 +97,6 @@ source ~/.config/shellrc/.shellrc.load
 
 # set the zsh dotdir / .dir
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-mkdir -p $ZDOTDIR
+if [ -d "$XDG_CONFIG_HOME" ]; then
+	mkdir -p $ZDOTDIR
+fi
