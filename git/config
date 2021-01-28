@@ -1,0 +1,50 @@
+[user]
+    name = Benjamin Boortz
+    email = benjamin.boortz@secure.mailbox.org
+[core]
+    editor = vim
+    excludesfile = ~/.gitexcludes
+[color]
+    ui = true
+[push]
+    default = simple
+[diff]
+    tool = vimdiff
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+[mergetool]
+	keepbackup = false
+[credential "https://github.com"]
+	username = bboortz
+[http]
+	lowSpeedLimit = 1000
+	lowSpeedTime = 20
+	postBuffer = 524288000
+[include]
+	path = ~/.gitconfig_local
+[alias]
+    s = status -sb
+    b = branch
+    c = commit -v
+	ca = commit -a -v
+	camend = commit --amend --no-edit -v
+	d = diff
+    a = add
+    co = checkout
+	p = push
+	pc = diff --stat --cached origin/master
+    pl = pull
+    f = fetch
+    mt = mergetool
+    m = merge
+	r = remote
+	ru = remote -v update
+    re = rebase
+	l = log --graph --full-history --all --color 
+	lg = log --stat
+    d = diff
+[credential]
+	helper = cache --timeout=3600
+[pull]
+	rebase = false
