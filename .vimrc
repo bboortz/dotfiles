@@ -19,6 +19,7 @@ set tabstop=4          " number of spaces that a <Tab> in the file counts for
 set softtabstop=4      " number of spaces that a <Tab> counts for while performing
                        " editing operations, like inserting a <Tab> or using <BS>
 set shiftwidth=4       " number of spaces to use for each step of (auto)indent
+set expandtab          " using spaces instead of tabs
 set smarttab           " use different amount of spaces in a front of line or in other places
                        " according to 'tabstop', 'softtabstop' and 'shiftwidth' settings
 set autoindent         " copy indent from current line when starting a new line
