@@ -45,16 +45,7 @@ set helpheight=9999    " current help window to maximum height
 
 
 " Setup colorscheme -------------------------------------------------------------------------------
-set background=light   " Vim will try to use colors that look good on a light background
-try
-    colorscheme solarized  " try to setup colorscheme
-    " reload 'mark' plugin after colorscheme changed
-    " if filereadable($HOME."/.vim/plugin/mark.vim")
-    "     source ~/.vim/plugin/mark.vim
-    " endif
-catch /^Vim\%((\a\+)\)\=:E185/
-    " cannot find color scheme
-endtry
+colorscheme ron        " try to setup colorscheme
 
 
 " Keys remapping ----------------------------------------------------------------------------------
