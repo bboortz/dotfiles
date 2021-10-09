@@ -4,14 +4,14 @@
 #
 
 # XDG
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_CONFIG_DIRS=${XDG_CONFIG_HOME}:/etc/xdg
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_DATA_HOME=$HOME/.local/share
+#export XDG_CONFIG_HOME=$HOME/.config
+#export XDG_CONFIG_DIRS=${XDG_CONFIG_HOME}:/etc/xdg
+#export XDG_CACHE_HOME=$HOME/.cache
+#export XDG_DATA_HOME=$HOME/.local/share
 
 # Xauth
-export XAUTHORITY="$XDG_CONFIG_HOME/X11/Xauthority"
-export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
+#export XAUTHORITY="$XDG_CONFIG_HOME/X11/Xauthority"
+#export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 
 # Less
 export LESSHISTFILE="${XDG_CONFIG_HOME}/less/history"
