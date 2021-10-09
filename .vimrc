@@ -103,3 +103,83 @@ function InsertTabWrapper()
     endif
 endfunction
 imap <tab> <c-r>=InsertTabWrapper()<CR>
+
+
+" Manage plugins via Vundle -------------------
+" let Vundle manage Vundle, required
+" Plugin 'VundleVim/Vundle.vim'
+
+" Setting up Vundle - the vim plugin bundler
+    let iCanHazVundle=1
+    let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+    if !filereadable(vundle_readme)
+        echo "Installing Vundle.."
+        echo ""
+        silent !mkdir -p ~/.vim/bundle
+        silent !git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/vundle
+        let iCanHazVundle=0
+    endif
+    set nocompatible              " be iMproved, required
+    filetype off                  " required
+    set rtp+=~/.vim/bundle/vundle/
+    call vundle#begin()
+    Plugin 'VundleVim/Vundle.vim'
+    "Add your bundles here
+    " Plugin 'Syntastic' "uber awesome syntax and errors highlighter
+    Plugin 'vim-syntastic/syntastic'
+    Plugin 'altercation/vim-colors-solarized' "T-H-E colorscheme
+    Plugin 'https://github.com/tpope/vim-fugitive' "So awesome, it should be illegal
+    Plugin 'rust-lang/rust.vim' " rust plugin
+    Plugin 'preservim/tagbar' " tagbar
+    Plugin 'preservim/nerdtree' " Nerdtree
+    if iCanHazVundle == 0
+        echo "Installing Vundles, please ignore key map error messages"
+        echo ""
+        :PluginInstall
+    endif
+
+    call vundle#end()
+    "must be last
+    filetype plugin indent on " load filetype plugins/indent settings
+    " colorscheme solarized
+    syntax on                      " enable syntax
+
+" Setting up Vundle - the vim plugin bundler end
+
+
+" --------
+" configure Syntastic
+" --------
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" --------
+" configure rustfmt
+" --------
+let g:rustfmt_autosave = 1
+
+" --------
+" configure tagbar
+" --------
+nmap <F8> :TagbarToggle<CR>
+
+
+" --------
+" configure tagbar
+" --------
+
+" Open the existing NERDTree on each new tab.
+autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
+
+" Start NERDTree. If a file is specified, move the cursor to its window.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
