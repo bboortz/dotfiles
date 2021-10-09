@@ -45,6 +45,6 @@
 	lg = log --stat
     d = diff
 [credential]
-	helper = cache --timeout=18000
+	helper = cache --timeout=86400
 [pull]
 	rebase = false
